@@ -46,8 +46,9 @@ function init(){
 
         // A window confirm should let the user know "Confirm that you want to abort the mission." If the user wants to abort the mission, then add parts b-d.
         if (confirm("Confirm that you want to abort the mission.")){
-            
+
         // The flight status should change to "Mission aborted."
+        flightStatus.innerHTML = "Mission aborted.";
         // The background color of the shuttle flight screen should change from blue to green.
         // The shuttle height should go to 0.
         };
