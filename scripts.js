@@ -9,6 +9,30 @@ function init(){
     const shuttleFlightScreen = document.getElementById("shuttleBackground");
     const spaceShuttleHeight = document.getElementById("spaceShuttleHeight");
 
+    let upButton;
+    let downButton;
+    let rightButton;
+    let leftButton;
+    
+    totalButtons = document.getElementsByTagName("button").length;
+
+    for(let i=0;i<totalButtons;i++){
+        switch (document.getElementsByTagName("button")[i].innerHTML){
+            case 'Up':
+                upButton = document.getElementsByTagName("button")[i];
+                break;
+            case 'Down':
+                downButton = document.getElementsByTagName("button")[i];
+                break;
+            case 'Down':
+                downButton = document.getElementsByTagName("button")[i];
+                break;
+            case 'Down':
+                downButton = document.getElementsByTagName("button")[i];
+                break;
+        }
+    }
+
     takeoff.addEventListener("click", function(){
         if (confirm("Confirm that the shuttle is ready for takeoff.")){
 
@@ -48,10 +72,22 @@ function init(){
         if (confirm("Confirm that you want to abort the mission.")){
 
         // The flight status should change to "Mission aborted."
-        flightStatus.innerHTML = "Mission aborted.";
+            flightStatus.innerHTML = "Mission aborted.";
+
         // The background color of the shuttle flight screen should change from blue to green.
+            shuttleFlightScreen.style.backgroundColor = "green";
+
         // The shuttle height should go to 0.
+            spaceShuttleHeight.innerHTML = 0;
         };
+    });
+
+        // When the "Up", "Down", "Right", and "Left" buttons are clicked, the following should happen:
+        // The rocket image should move 10 px in the direction of the button that was clicked.
+        // If the "Up" or "Down" buttons were clicked, then the shuttle height should increase or decrease by 10,000 miles.
+
+    upButton.addEventListener("click", function(){
+        alert('up');
     });
 }
 
