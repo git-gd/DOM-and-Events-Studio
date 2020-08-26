@@ -8,14 +8,16 @@ function init(){
     const flightStatus = document.getElementById("flightStatus");
     const shuttleFlightScreen = document.getElementById("shuttleBackground");
     const spaceShuttleHeight = document.getElementById("spaceShuttleHeight");
+    const rocket = document.getElementById("rocket");
 
     let upButton;
     let downButton;
     let rightButton;
     let leftButton;
     
-    totalButtons = document.getElementsByTagName("button").length;
+    const totalButtons = document.getElementsByTagName("button").length;
 
+    // find buttons by their innerHTML
     for(let i=0;i<totalButtons;i++){
         switch (document.getElementsByTagName("button")[i].innerHTML){
             case 'Up':
@@ -87,16 +89,16 @@ function init(){
         // If the "Up" or "Down" buttons were clicked, then the shuttle height should increase or decrease by 10,000 miles.
 
     upButton.addEventListener("click", function(){
-        alert('up');
+        spaceShuttleHeight.innerHTML = Number(spaceShuttleHeight.innerHTML) + 10000;
     });
     downButton.addEventListener("click", function(){
-        alert('down');
+        spaceShuttleHeight.innerHTML = Number(spaceShuttleHeight.innerHTML) - 10000;
     });
     leftButton.addEventListener("click", function(){
-        alert('left');
+        
     });
     rightButton.addEventListener("click", function(){
-        alert('right');
+        
     });
 }
 
