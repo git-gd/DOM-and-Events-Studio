@@ -48,6 +48,8 @@ function init(){
 
         // The shuttle height should increase by 10,000 miles.
             spaceShuttleHeight.innerHTML = Number(spaceShuttleHeight.innerHTML) + 10000;
+
+            rocketImg.style.bottom = parseInt(rocket.style.bottom) + 10 + "px";
         };
 
     });
@@ -66,6 +68,9 @@ function init(){
 
         // The shuttle height should go down to 0.
         spaceShuttleHeight.innerHTML = 0;
+
+        rocketImg.style.bottom = "0px";
+        rocketImg.style.left = "0px";
     });
 
 
@@ -83,6 +88,10 @@ function init(){
 
         // The shuttle height should go to 0.
             spaceShuttleHeight.innerHTML = 0;
+
+            rocketImg.style.bottom = "0px";
+            rocketImg.style.left = "0px";
+    
         };
     });
 
@@ -91,18 +100,26 @@ function init(){
         // If the "Up" or "Down" buttons were clicked, then the shuttle height should increase or decrease by 10,000 miles.
 
     upButton.addEventListener("click", function(){
-        spaceShuttleHeight.innerHTML = Number(spaceShuttleHeight.innerHTML) + 10000;
-        rocketImg.style.bottom = parseInt(rocket.style.bottom) + 10 + "px";
+        const farTop = shuttleFlightScreen.offsetHeight - rocketImg.height;
+
+        if (parseInt(rocketImg.style.bottom) < farTop) {
+            spaceShuttleHeight.innerHTML = Number(spaceShuttleHeight.innerHTML) + 10000;
+            rocketImg.style.bottom = parseInt(rocket.style.bottom) + 10 + "px";
+        }
     });
     downButton.addEventListener("click", function(){
-        spaceShuttleHeight.innerHTML = Number(spaceShuttleHeight.innerHTML) - 10000;
-        rocketImg.style.bottom = parseInt(rocket.style.bottom) - 10 + "px";
+        if (parseInt(rocketImg.style.bottom) > 0){
+            spaceShuttleHeight.innerHTML = Number(spaceShuttleHeight.innerHTML) - 10000;
+            rocketImg.style.bottom = parseInt(rocket.style.bottom) - 10 + "px";
+        }
     });
     leftButton.addEventListener("click", function(){
-        rocketImg.style.left = parseInt(rocket.style.left) - 10 + "px";
+        if (parseInt(rocketImg.style.left) > 0) {rocketImg.style.left = parseInt(rocket.style.left) - 10 + "px"};
     });
     rightButton.addEventListener("click", function(){
-        rocketImg.style.left = parseInt(rocket.style.left) + 10 + "px";
+        const farRight = shuttleFlightScreen.offsetWidth - rocketImg.width;
+
+        if (parseInt(rocketImg.style.left) < farRight) {rocketImg.style.left = parseInt(rocket.style.left) + 10 + "px"};
     });
 }
 
