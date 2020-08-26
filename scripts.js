@@ -36,6 +36,7 @@ function init(){
         shuttleFlightScreen.style.backgroundColor = "green";
 
         // The shuttle height should go down to 0.
+        spaceShuttleHeight.innerHTML = 0;
     });
 }
 
