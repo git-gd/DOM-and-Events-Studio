@@ -24,11 +24,11 @@ function init(){
             case 'Down':
                 downButton = document.getElementsByTagName("button")[i];
                 break;
-            case 'Down':
-                downButton = document.getElementsByTagName("button")[i];
+            case 'Left':
+                leftButton = document.getElementsByTagName("button")[i];
                 break;
-            case 'Down':
-                downButton = document.getElementsByTagName("button")[i];
+            case 'Right':
+                rightButton = document.getElementsByTagName("button")[i];
                 break;
         }
     }
@@ -88,6 +88,15 @@ function init(){
 
     upButton.addEventListener("click", function(){
         alert('up');
+    });
+    downButton.addEventListener("click", function(){
+        alert('down');
+    });
+    leftButton.addEventListener("click", function(){
+        alert('left');
+    });
+    rightButton.addEventListener("click", function(){
+        alert('right');
     });
 }
 
