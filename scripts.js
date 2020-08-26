@@ -28,6 +28,8 @@ function init(){
         // A window alert should let the user know "The shuttle is landing. Landing gear engaged."
         alert("The shuttle is landing. Landing gear engaged.");
         // The flight status should change to "The shuttle has landed."
+        flightStatus.innerHTML = "The shuttle has landed.";
+        
         // The background color of the shuttle flight screen should change from blue to green.
         // The shuttle height should go down to 0.
     });
