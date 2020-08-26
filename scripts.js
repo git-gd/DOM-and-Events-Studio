@@ -15,7 +15,7 @@ function init(){
             flightStatus.innerHTML = "Shuttle in flight.";
 
         // The background color of the shuttle flight screen (id = "shuttleBackground") should change from green to blue.
-            shuttleFlightScreen.style.backgroundColor = "#0000FF";
+            shuttleFlightScreen.style.backgroundColor = "blue";
 
         // The shuttle height should increase by 10,000 miles.
             spaceShuttleHeight.innerHTML = Number(spaceShuttleHeight.innerHTML) + 10000;
@@ -25,12 +25,16 @@ function init(){
 
         // When the "Land" button is clicked, the following should happen:
     landing.addEventListener("click", function(){
+
         // A window alert should let the user know "The shuttle is landing. Landing gear engaged."
         alert("The shuttle is landing. Landing gear engaged.");
+
         // The flight status should change to "The shuttle has landed."
         flightStatus.innerHTML = "The shuttle has landed.";
-        
+
         // The background color of the shuttle flight screen should change from blue to green.
+        shuttleFlightScreen.style.backgroundColor = "green";
+
         // The shuttle height should go down to 0.
     });
 }
