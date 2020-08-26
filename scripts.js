@@ -8,7 +8,9 @@ function init(){
     const flightStatus = document.getElementById("flightStatus");
     const shuttleFlightScreen = document.getElementById("shuttleBackground");
     const spaceShuttleHeight = document.getElementById("spaceShuttleHeight");
-    const rocket = document.getElementById("rocket");
+    const rocketImg = document.getElementById("rocket");
+
+    rocketImg.setAttribute("style", "position: absolute; left: 0px; bottom: 0px");
 
     let upButton;
     let downButton;
@@ -90,15 +92,17 @@ function init(){
 
     upButton.addEventListener("click", function(){
         spaceShuttleHeight.innerHTML = Number(spaceShuttleHeight.innerHTML) + 10000;
+        rocketImg.style.bottom = parseInt(rocket.style.bottom) + 10 + "px";
     });
     downButton.addEventListener("click", function(){
         spaceShuttleHeight.innerHTML = Number(spaceShuttleHeight.innerHTML) - 10000;
+        rocketImg.style.bottom = parseInt(rocket.style.bottom) - 10 + "px";
     });
     leftButton.addEventListener("click", function(){
-        
+        rocketImg.style.left = parseInt(rocket.style.left) - 10 + "px";
     });
     rightButton.addEventListener("click", function(){
-        
+        rocketImg.style.left = parseInt(rocket.style.left) + 10 + "px";
     });
 }
 
